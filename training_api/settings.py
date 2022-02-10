@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['https://training-dj-api.herokuapp.com']
+ALLOWED_HOSTS = ['training-dj-api.herokuapp.com']
 
 
 # Application definition
