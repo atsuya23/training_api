@@ -16,6 +16,7 @@ TRAINING_TYPE = [
     ('decline_benchPress', 'デクラインベンチプレス'),
     ('dumbbellFly', 'ダンベルフライ'),
     ('chinning', 'チンニング'),
+
 ]
 TRAINING_PHASE = [
     ('normal', '基本'),
@@ -41,3 +42,9 @@ class Measurement(models.Model):
     left_arm = models.PositiveIntegerField()
     right_arm = models.PositiveIntegerField()
     body_weight = models.PositiveIntegerField()
+
+
+
+
+
+

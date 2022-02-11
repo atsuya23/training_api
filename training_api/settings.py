@@ -14,6 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 from decouple import config
 from dj_database_url import parse as dburl
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -28,19 +29,22 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['training-dj-api.herokuapp.com']
+ALLOWED_HOSTS = ['training-dj-api.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'api.apps.ApiConfig',
+    'etc.apps.EtcConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api.apps.ApiConfig',
+
     'rest_framework',
     'corsheaders',
     'djoser',
@@ -149,4 +153,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR / 'staticfiles')
+
+STATICFILES_DIRS = [
+    str(BASE_DIR / "static"),
+]
 

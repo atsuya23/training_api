@@ -3,12 +3,18 @@ from django.conf.urls import include
 from rest_framework import routers
 from api.views import DayViewSet, DayListView, DayRetrieveView, \
     TrainingViewSet, TrainingRetrieveView, TrainingListView, \
-    MeasurementViewSet, MeasurementRetrieveView, MeasurementListView, CreateUserView
+    MeasurementViewSet, MeasurementRetrieveView, MeasurementListView, CreateUserView,\
+    BenchAllViewSet, BenchNormalViewSet, BenchLowWeightViewSet, BenchHighWeightViewSet
 
 router = routers.DefaultRouter()
 router.register('day', DayViewSet, basename='day')
 router.register('training', TrainingViewSet, basename='training')
 router.register('measurement', MeasurementViewSet, basename='measurement')
+router.register('bench-all', BenchAllViewSet, basename='bench-all')
+router.register('bench-normal', BenchNormalViewSet, basename='bench-normal')
+router.register('bench-high', BenchHighWeightViewSet, basename='bench-high')
+router.register('bench-low', BenchLowWeightViewSet, basename='bench-low')
+
 
 urlpatterns = [
     path('list-day/', DayListView.as_view(), name='list-day'),

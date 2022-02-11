@@ -2,6 +2,13 @@ from django.contrib import admin
 from .models import Day, Training, Measurement
 
 
+# 管理サイト名
+admin.site.site_header = '筋トレ記録　登録'
+
+# サイト管理名
+admin.site.index_title = '記録'
+
+
 class TrainingInline(admin.TabularInline):
     model = Training
     fk_name = "day"
