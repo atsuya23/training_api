@@ -31,7 +31,7 @@ DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = [
     'training-dj-api.herokuapp.com',
-    'test-dj-api',
+    'test-dj-api.herokuapp.com',
     '127.0.0.1'
 ]
 
