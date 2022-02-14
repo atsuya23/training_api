@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Day, Training, Measurement
+from .models import Training, Measurement
 from django.contrib.auth.models import User
 from drf_writable_nested import WritableNestedModelSerializer
 
@@ -14,13 +14,6 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
         return user
-
-
-class DaySerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Day
-        fields = '__all__'
 
 
 class TrainingSerializer(serializers.ModelSerializer):

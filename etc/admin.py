@@ -1,30 +1,22 @@
 from django.contrib import admin
-from .models import DayEtc, Goal, Memo
-
-
-class DayEtcAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ('Day', {'fields': ['day_etc']})
-    ]
+from .models import Goal, Memo
 
 
 class GoalAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Goal', {'fields': ['day_etc', 'length', 'deadline']}),
+        ('Goal', {'fields': ['length', 'deadline']}),
         ('About', {'fields': ['content']})
     ]
-    list_display = ('day_etc', 'length', 'deadline')
-    list_filter = ('day_etc', 'length', 'deadline')
-    search_fields = ('day_etc', 'length', 'deadline')
+    list_display = ('day', 'length', 'deadline')
+    list_filter = ('day', 'length', 'deadline')
+    search_fields = ('day', 'length', 'deadline')
 
 
 class MemoAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('', {'fields': ['day_etc', 'memo']})
+        ('', {'fields': ['memo']})
     ]
 
-
-admin.site.register(DayEtc, DayEtcAdmin)
 
 admin.site.register(Goal, GoalAdmin)
 

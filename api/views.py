@@ -1,32 +1,13 @@
 from rest_framework.permissions import AllowAny
 from rest_framework import generics
 from rest_framework import viewsets
-from .serializers import DaySerializer, TrainingSerializer, MeasurementSerializer, UserSerializer
-from .models import Day, Training, Measurement
+from .serializers import TrainingSerializer, MeasurementSerializer, UserSerializer
+from .models import Training, Measurement
 
 
 class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = (AllowAny,)
-
-
-class DayListView(generics.ListAPIView):
-    queryset = Day.objects.all()
-    serializer_class = DaySerializer
-    permission_classes = (AllowAny,)
-
-
-class DayRetrieveView(generics.RetrieveAPIView):
-    queryset = Day.objects.all()
-    serializer_class = DaySerializer
-    permission_classes = (AllowAny,)
-
-
-class DayViewSet(viewsets.ModelViewSet):
-    queryset = Day.objects.all()
-    serializer_class = DaySerializer
-    permission_classes = (AllowAny,)
-    filterset_fields = ['day', 'id']
 
 
 class TrainingListView(generics.ListAPIView):

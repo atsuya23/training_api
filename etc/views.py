@@ -1,21 +1,15 @@
 from rest_framework.permissions import AllowAny
 from rest_framework import generics
 from rest_framework import viewsets
-from .models import DayEtc, Memo, Goal
-from .serializers import MemoSerializer, DayEtcSerializer, GoalSerializer
-
-
-class DayEtcViewSet(viewsets.ModelViewSet):
-    queryset = DayEtc.objects.all()
-    serializer_class = DayEtcSerializer
-    permission_classes = (AllowAny,)
+from .models import Memo, Goal
+from .serializers import MemoSerializer, GoalSerializer
 
 
 class GoalViewSet(viewsets.ModelViewSet):
     queryset = Goal.objects.all()
     serializer_class = GoalSerializer
     permission_classes = (AllowAny,)
-    filterset_fields = ['day_etc', 'length', 'deadline']
+    filterset_fields = ['day', 'length', 'deadline']
 
 
 class MemoViewSet(viewsets.ModelViewSet):
