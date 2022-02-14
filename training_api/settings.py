@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'etc.apps.EtcConfig',
 
+    # General use templates & template tags (should apper first)
+    'adminlte3',
+    # Optional: Django admin theme (must be before django.contrib.admin)
+    'adminlte3_theme',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
