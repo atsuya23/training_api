@@ -8,8 +8,8 @@ TRAINING_TYPE = [
     ('dumbbellPress', 'ダンベルプレス'),
     ('decline_benchPress', 'デクラインベンチプレス'),
     ('dumbbellFly', 'ダンベルフライ'),
+    ('dumbbellRow', 'ダンベルロウ'),
     ('chinning', 'チンニング'),
-
 ]
 TRAINING_PHASE = [
     ('normal', '基本'),
@@ -29,15 +29,6 @@ class Training(models.Model):
         return f"{self.type} : {self.weight} * {self.rep}"
 
 
-class Measurement(models.Model):
-    day = models.DateField(default=timezone.now())
-    chest = models.PositiveIntegerField()
-    left_arm = models.PositiveIntegerField()
-    right_arm = models.PositiveIntegerField()
-    body_weight = models.PositiveIntegerField()
-
-    def __str__(self):
-        return f"measured at {self.day}"
 
 
 

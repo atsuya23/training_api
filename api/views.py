@@ -1,8 +1,8 @@
 from rest_framework.permissions import AllowAny
 from rest_framework import generics
 from rest_framework import viewsets
-from .serializers import TrainingSerializer, MeasurementSerializer, UserSerializer
-from .models import Training, Measurement
+from .serializers import TrainingSerializer, UserSerializer
+from .models import Training
 
 
 class CreateUserView(generics.CreateAPIView):
@@ -27,25 +27,6 @@ class TrainingViewSet(viewsets.ModelViewSet):
     serializer_class = TrainingSerializer
     permission_classes = (AllowAny,)
     filterset_fields = ['day', 'type', 'phase', 'weight']
-
-
-class MeasurementListView(generics.ListAPIView):
-    queryset = Measurement.objects.all()
-    serializer_class = MeasurementSerializer
-    permission_classes = (AllowAny,)
-
-
-class MeasurementRetrieveView(generics.RetrieveAPIView):
-    queryset = Measurement.objects.all()
-    serializer_class = MeasurementSerializer
-    permission_classes = (AllowAny,)
-
-
-class MeasurementViewSet(viewsets.ModelViewSet):
-    queryset = Measurement.objects.all()
-    serializer_class = MeasurementSerializer
-    permission_classes = (AllowAny,)
-    filterset_fields = ['chest', 'left_arm', 'right_arm', 'weight']
 
 
 # ベンチのみ

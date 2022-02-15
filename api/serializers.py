@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Training, Measurement
+from .models import Training
 from django.contrib.auth.models import User
 from drf_writable_nested import WritableNestedModelSerializer
 
@@ -23,9 +23,4 @@ class TrainingSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class MeasurementSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Measurement
-        fields = '__all__'
 

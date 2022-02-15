@@ -26,3 +26,14 @@ class Memo(models.Model):
         return self.memo
 
 
+class Measurement(models.Model):
+    day = models.DateField(default=timezone.now())
+    chest = models.PositiveIntegerField()
+    left_arm = models.PositiveIntegerField()
+    right_arm = models.PositiveIntegerField()
+    body_weight = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"measured at {self.day}"
+
+

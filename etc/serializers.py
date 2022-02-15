@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Memo, Goal
+from .models import Memo, Goal, Measurement
 
 
 class GoalSerializer(serializers.ModelSerializer):
@@ -11,4 +11,11 @@ class GoalSerializer(serializers.ModelSerializer):
 class MemoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Memo
+        fields = '__all__'
+
+
+class MeasurementSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Measurement
         fields = '__all__'
