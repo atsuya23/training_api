@@ -7,14 +7,18 @@ TRAINING_TYPE = [
     ('benchPress', 'ベンチプレス'),
     ('dumbbellPress', 'ダンベルプレス'),
     ('decline_benchPress', 'デクラインベンチプレス'),
+    ('frenchPress', 'フレンチプレス'),
     ('dumbbellFly', 'ダンベルフライ'),
     ('dumbbellRow', 'ダンベルロウ'),
     ('chinning', 'チンニング'),
+    ('chestPress', 'チェストプレス'),
+    ('armCurl', 'アームカール')
 ]
 TRAINING_PHASE = [
     ('normal', '基本'),
     ('highWeight', '高重量'),
     ('lowWeight', '低重量'),
+    ('max', '最大重量'),
 ]
 
 

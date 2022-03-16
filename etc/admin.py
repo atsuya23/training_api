@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Goal, Memo, Measurement
 
+admin.site.index_title = 'その他'
+
 
 class GoalAdmin(admin.ModelAdmin):
     fieldsets = [
